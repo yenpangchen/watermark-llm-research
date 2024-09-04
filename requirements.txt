@@ -4,3 +4,9 @@ scipy
 torch
 transformers
 tokenizers
+protobuf
+accelerate
+bitsandbytes
+sentencepiece
+datasets
+googleapiclient

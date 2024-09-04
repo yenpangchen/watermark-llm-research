@@ -28,9 +28,39 @@ import torch
 from transformers import (AutoTokenizer,
                           AutoModelForSeq2SeqLM,
                           AutoModelForCausalLM,
-                          LogitsProcessorList)
+                          LogitsProcessorList,
+                          BitsAndBytesConfig)
 
 from watermark_processor import WatermarkLogitsProcessor, WatermarkDetector
+
+import json
+from googleapiclient import discovery
+from dotenv import load_dotenv
+
+# 加載 .env 文件中的環境變數
+load_dotenv()
+
+def cal_toxicity_score(comment_text):
+    API_KEY = os.getenv('PERSPECTIVE_API_KEY')
+    
+    if not API_KEY:
+        raise ValueError("API key not found. Please set the PERSPECTIVE_API_KEY environment variable.")
+    
+    client = discovery.build(
+        "commentanalyzer",
+        "v1alpha1",
+        developerKey=API_KEY,
+        discoveryServiceUrl="https://commentanalyzer.googleapis.com/$discovery/rest?version=v1alpha1",
+        static_discovery=False,
+    )
+    
+    analyze_request = {
+        'comment': {'text': comment_text},
+        'requestedAttributes': {'TOXICITY': {}}
+    }
+    
+    response = client.comments().analyze(body=analyze_request).execute()
+    return response
 
 def str2bool(v):
     """Util function for user friendly boolean flag args"""
@@ -57,13 +87,13 @@ def parse_args():
     parser.add_argument(
         "--demo_public",
         type=str2bool,
-        default=False,
+        default=True,
         help="Whether to expose the gradio demo to the internet.",
     )
     parser.add_argument(
         "--model_name_or_path",
         type=str,
-        default="facebook/opt-6.7b",
+        # default="MediaTek-Research/Breeze-7B-Instruct-v1_0",
         help="Main model, path to pretrained model or model identifier from huggingface.co/models.",
     )
     parser.add_argument(
@@ -174,15 +204,36 @@ def parse_args():
 def load_model(args):
     """Load and return the model and tokenizer"""
 
+    # cache_dir = "./cache"
+    cache_dir = "/media/soslab/TRANSCEND/cache"
+
+    nf4_config = BitsAndBytesConfig(
+      load_in_4bit=True,
+      bnb_4bit_quant_type="nf4",
+      bnb_4bit_use_double_quant=True,
+      bnb_4bit_compute_dtype=torch.bfloat16
+    )
+
     args.is_seq2seq_model = any([(model_type in args.model_name_or_path) for model_type in ["t5","T0"]])
-    args.is_decoder_only_model = any([(model_type in args.model_name_or_path) for model_type in ["gpt","opt","bloom"]])
+    args.is_decoder_only_model = any([(model_type in args.model_name_or_path) for model_type in ["gpt","opt","bloom","MediaTek","gemma","Llama"]])
     if args.is_seq2seq_model:
         model = AutoModelForSeq2SeqLM.from_pretrained(args.model_name_or_path)
     elif args.is_decoder_only_model:
         if args.load_fp16:
-            model = AutoModelForCausalLM.from_pretrained(args.model_name_or_path,torch_dtype=torch.float16, device_map='auto')
+            model = AutoModelForCausalLM.from_pretrained(args.model_name_or_path,torch_dtype=torch.float16, device_map='auto', quantization_config=nf4_config)
+            print(f"model name: {args.model_name_or_path}, load_fp16: {args.load_fp16}")
         else:
-            model = AutoModelForCausalLM.from_pretrained(args.model_name_or_path)
+            # model = AutoModelForCausalLM.from_pretrained(args.model_name_or_path, quantization_config=nf4_config)
+            model = AutoModelForCausalLM.from_pretrained(
+                args.model_name_or_path,
+                cache_dir = cache_dir,
+                device_map="auto",
+                torch_dtype=torch.bfloat16,
+                quantization_config=nf4_config,
+                low_cpu_mem_usage = True,
+                # attn_implementation="flash_attention_2" # optional
+            )
+            print(f"model name: {args.model_name_or_path}, load_fp16: {args.load_fp16}")
     else:
         raise ValueError(f"Unknown model type: {args.model_name_or_path}")
 
@@ -191,7 +242,8 @@ def load_model(args):
         if args.load_fp16: 
             pass
         else: 
-            model = model.to(device)
+            # model = model.to(device)
+            pass
     else:
         device = "cpu"
     model.eval()
@@ -606,7 +658,7 @@ def run_gradio(args, model=None, device=None, tokenizer=None):
         select_green_tokens.change(fn=detect_partial, inputs=[detection_input,session_args], outputs=[detection_result,session_args])
 
 
-    demo.queue(concurrency_count=3)
+    # demo.queue(concurrency_count=3)
 
     if args.demo_public:
         demo.launch(share=True) # exposes app to the internet via randomly generated link
