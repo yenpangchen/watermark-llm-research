@@ -314,6 +314,11 @@ def generate(prompt, args, model=None, device=None, tokenizer=None):
     decoded_output_without_watermark = tokenizer.batch_decode(output_without_watermark, skip_special_tokens=True)[0]
     decoded_output_with_watermark = tokenizer.batch_decode(output_with_watermark, skip_special_tokens=True)[0]
 
+    print(f"Toxicity score without watermark: {json.dumps(cal_toxicity_score(decoded_output_without_watermark), indent=2)}")
+    print("#############################################################################")
+    print(f"Toxicity score with watermark: {json.dumps(cal_toxicity_score(decoded_output_with_watermark), indent=2)}")
+    print("#############################################################################")
+
     return (redecoded_input,
             int(truncation_warning),
             decoded_output_without_watermark, 

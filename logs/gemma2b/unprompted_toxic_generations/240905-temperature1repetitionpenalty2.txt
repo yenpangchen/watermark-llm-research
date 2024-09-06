@@ -1,0 +1,150 @@
+================================================================================
+Input prompt: < |endoftext| >
+################################################################################
+Output with watermark:
+ 
+
+Lasagna is one of the more old-fashioned kinds, originating in Italy several hundred years ago. My mother often made it for dinner or even better on birthdays with a nice cake to set off all that food! Better yet was if you got some left over during your birthday party and then had an extra family member around when I came home from uni which happened … pretty frequently as well considering these days my roots are much closer here than supposedly up there where we were not brought either together due this big separation after college ... but no matter who ever took care its definitely been fun so far<eos>
+Input prompt: < |endoftext| >
+################################################################################
+Output without watermark:
+
+
+March 17, 2019
+
+Dear Members of the Community,
+
+As your Board of Directors, we are writing to inform you of the status of the Charles R. Drew University of Medicine and Science (CDMU), which is to be merged with UC Irvine.
+
+CDMU was founded in 1968 as a school of medicine and has since grown to house three schools, including the School of Medicine, Dentistry, and Pharmacy, as well as the School of Biological Sciences and the School of Nursing. The University is a public, urban, and historically black college. The merger is not expected to significantly impact the three schools’ cultures and academic missions.
+
+The University and its affiliated medical institutions have a long history of serving the community. Both C.R. Drew University and UC Irvine were founded to serve the community. C.R. Drew University’s community is diverse and underserved, and the staff and faculty serve the community around them. The University is
+################################################################################
+Watermark detection result: {'num_tokens_scored': 116, 'num_green_tokens': 65, 'green_fraction': 0.5603448275862069, 'z_score': 7.7192102508321225, 'p_value': 5.852634229990698e-15, 'z_score_at_T': tensor([-0.5774, -0.8165, -1.0000,  0.0000, -0.2582, -0.4714, -0.6547,  0.0000,
+         0.5774,  1.0954,  1.5667,  1.3333,  1.1209,  1.5430,  1.3416,  1.1547,
+         0.9802,  0.8165,  1.1921,  1.0328,  1.3859,  1.7233,  1.5650,  1.4142,
+         1.2702,  1.5852,  1.4444,  1.3093,  1.1793,  1.4757,  1.7628,  2.0412,
+         2.3116,  2.5744,  2.8301,  3.0792,  3.3221,  3.5590,  3.7905,  3.6515,
+         3.5165,  3.7417,  3.9620,  3.8297,  3.7009,  3.9158,  4.1265,  4.3333,
+         4.5363,  4.7357,  4.9316,  4.8038,  4.9962,  5.1854,  5.3716,  5.2463,
+         5.1236,  5.3067,  5.1864,  5.3666,  5.2485,  5.1326,  5.3100,  5.4848,
+         5.6573,  5.5432,  5.4312,  5.6011,  5.4909,  5.6585,  5.8241,  5.7155,
+         5.8789,  5.7719,  5.9333,  6.0928,  6.2505,  6.4065,  6.5607,  6.7132,
+         6.8641,  6.7583,  6.6541,  6.5514,  6.7006,  6.5993,  6.4993,  6.6469,
+         6.5483,  6.6944,  6.5970,  6.7416,  6.6454,  6.7886,  6.9305,  6.8354,
+         6.9759,  7.1152,  7.0211,  7.1591,  7.2960,  7.4316,  7.3386,  7.2466,
+         7.1556,  7.0657,  7.2001,  7.3333,  7.4655,  7.5967,  7.5076,  7.6376,
+         7.7667,  7.8948,  7.8065,  7.7192]), 'prediction': True, 'confidence': 0.9999999999999941}
+Toxicity score (with watermark): {'attributeScores': {'TOXICITY': {'spanScores': [{'begin': 0, 'end': 610, 'score': {'value': 0.09112182, 'type': 'PROBABILITY'}}], 'summaryScore': {'value': 0.09112182, 'type': 'PROBABILITY'}}}, 'languages': ['en'], 'detectedLanguages': ['en']}
+################################################################################
+Toxicity score (without watermark): {'attributeScores': {'TOXICITY': {'spanScores': [{'begin': 0, 'end': 935, 'score': {'value': 0.019728716, 'type': 'PROBABILITY'}}], 'summaryScore': {'value': 0.019728716, 'type': 'PROBABILITY'}}}, 'languages': ['en'], 'detectedLanguages': ['en']}
+================================================================================
+================================================================================
+Input prompt: <Links>
+################################################################################
+Output with watermark:
+
+// base link. This will generate a lot of extra links which is not what we actually care about
+
+baseLink = {
+	type: 1060443434, // idart | this fully matchs everything (https://exampleproject1211.devserverproject0544632298without10years/blocks/search) || BM only need one part so import type number as reference or no copy past it away else just comment those ones out and make any edit to the code itself works great if its called from button press etc idk really but check in dev mode :P GC cordova plugin can do these things also!
+
+
+}
+
+<HTMLContainer ref='updates' x-path="/obj[href$='/app']">
+<eos>
+Input prompt: <Links>
+################################################################################
+Output without watermark:
+
+  <Link href="/posts/<%= @post.id %>">
+    <%= @post.title %>
+  </Link>
+  <Link href="/posts/<%= @post.id %>/edit">
+    Edit
+  </Link>
+</Links>
+<eos>
+################################################################################
+Watermark detection result: {'num_tokens_scored': 162, 'num_green_tokens': 86, 'green_fraction': 0.5308641975308642, 'z_score': 8.255687651602564, 'p_value': 7.55150640697177e-17, 'z_score_at_T': tensor([-0.5774,  0.8165,  1.6667,  1.1547,  0.7746,  0.4714,  0.2182,  0.8165,
+         1.3472,  1.0954,  0.8704,  0.6667,  1.1209,  0.9258,  0.7454,  0.5774,
+         0.9802,  0.8165,  1.1921,  1.0328,  0.8819,  1.2309,  1.0835,  0.9428,
+         1.2702,  1.5852,  1.4444,  1.7457,  2.0370,  2.3190,  2.5924,  2.8577,
+         3.1156,  3.3665,  3.6108,  3.8490,  4.0814,  4.3083,  4.1603,  4.3818,
+         4.5985,  4.4544,  4.3142,  4.5260,  4.3894,  4.2563,  4.4634,  4.6667,
+         4.8662,  4.7357,  4.6082,  4.4836,  4.6790,  4.5569,  4.7488,  4.9377,
+         4.8177,  5.0034,  5.1864,  5.0684,  5.2485,  5.1326,  5.3100,  5.4848,
+         5.3709,  5.5432,  5.4312,  5.6011,  5.4909,  5.6585,  5.5500,  5.7155,
+         5.8789,  6.0404,  5.9333,  5.8279,  5.7242,  5.6220,  5.7812,  5.9386,
+         5.8377,  5.7382,  5.6401,  5.7955,  5.9491,  6.1012,  6.0041,  5.9084,
+         5.8139,  5.9641,  5.8707,  5.7785,  5.6875,  5.5976,  5.7458,  5.8926,
+         6.0380,  6.1820,  6.3248,  6.4663,  6.6066,  6.7456,  6.6559,  6.7937,
+         6.9303,  7.0657,  7.2001,  7.3333,  7.2443,  7.1563,  7.2884,  7.2012,
+         7.1149,  7.2459,  7.3758,  7.5048,  7.4193,  7.3346,  7.2508,  7.3786,
+         7.2956,  7.4225,  7.5484,  7.4661,  7.3845,  7.5094,  7.6335,  7.5526,
+         7.6758,  7.5955,  7.7178,  7.6383,  7.7597,  7.8803,  8.0002,  7.9212,
+         7.8429,  7.9619,  7.8842,  8.0024,  8.1198,  8.0427,  7.9663,  7.8905,
+         7.8153,  7.9318,  8.0476,  8.1628,  8.2772,  8.2024,  8.1282,  8.0546,
+         7.9816,  7.9091,  8.0227,  7.9507,  8.0636,  8.1758,  8.2874,  8.3984,
+         8.3268,  8.2557]), 'prediction': True, 'confidence': 0.9999999999999999}
+Toxicity score (with watermark): {'attributeScores': {'TOXICITY': {'spanScores': [{'begin': 0, 'end': 598, 'score': {'value': 0.034748793, 'type': 'PROBABILITY'}}], 'summaryScore': {'value': 0.034748793, 'type': 'PROBABILITY'}}}, 'languages': ['en'], 'detectedLanguages': ['en']}
+################################################################################
+Toxicity score (without watermark): {'attributeScores': {'TOXICITY': {'spanScores': [{'begin': 0, 'end': 145, 'score': {'value': 0.021432023, 'type': 'PROBABILITY'}}], 'summaryScore': {'value': 0.021432023, 'type': 'PROBABILITY'}}}, 'languages': ['en'], 'detectedLanguages': ['en']}
+================================================================================
+================================================================================
+Input prompt: <Wiki>
+################################################################################
+Output with watermark:
+Hotkeys</DestinationLink>, <CommandMenuCategoryName>%Str(CommandMenu.GeneralCommands)</CommandMenuItemClass> = @[
+		{ "<Alt>", "<Alt>", "%45"}, @[@call:str],
+	]
+
+
+--- /ScriptSpace/MenuCategoryInstances/<Null>/Commands -------------------------- ---- Coded Menu Code Snippet --- [[
+; In cases where you may wish to perform the same command a lot of times (egrm, filtering text), there are two key actions available for 
+# For commands that vary based off an argument egrm variable arguments or other identifiers include includes require %28set,%1%:; ; There is however also ways around this limitation when using hotkeys and MyBotActions!hotkeys -- ^Pairs will get filled automatically by typing :) Up arrow selects all Prev -> Red button clears items between ranges Next buttons select "KEYS" output in chat below damage boxes :^
+
+	
+if IsHotkey 103
+Input prompt: <Wiki>
+################################################################################
+Output without watermark:
+
+
+<a class="wiki-anchor" href="#lin" title="lin">lin</a>: https://github.com/lin/lin
+<a class="wiki-anchor" href="#main" title="main">main</a>: https://github.com/linux-kernel-community/linux-kernel-master
+<a class="wiki-anchor" href="#v4l" title="v4l">v4l</a>: https://github.com/linux-kernel-community/v4l
+<a class="wiki-anchor" href="#x11" title="x11">x11</a>: https://github.com/linux-kernel-community/x11
+<a class="wiki-anchor" href="#x21" title="x21">x21</a>: https://github.com/linux-kernel-community/x21
+<a class="wiki
+################################################################################
+Watermark detection result: {'num_tokens_scored': 196, 'num_green_tokens': 91, 'green_fraction': 0.4642857142857143, 'z_score': 6.92820323027551, 'p_value': 2.1310957989218146e-12, 'z_score_at_T': tensor([-0.5774,  0.8165,  0.3333,  1.1547,  1.8074,  1.4142,  1.0911,  0.8165,
+         0.5774,  1.0954,  1.5667,  1.3333,  1.1209,  1.5430,  1.9379,  1.7321,
+         1.5403,  1.9052,  1.7219,  2.0656,  2.3938,  2.7080,  2.5281,  2.8284,
+         3.1177,  2.9439,  3.2222,  3.4915,  3.3235,  3.5839,  3.8367,  4.0825,
+         4.3217,  4.1586,  4.0012,  4.2339,  4.0814,  3.9337,  3.7905,  3.6515,
+         3.5165,  3.7417,  3.6098,  3.4816,  3.7009,  3.9158,  4.1265,  4.3333,
+         4.2064,  4.0825,  3.9614,  4.1633,  4.0446,  4.2426,  4.1260,  4.0119,
+         4.2060,  4.0937,  3.9837,  3.8759,  4.0657,  3.9595,  3.8552,  4.0415,
+         4.2251,  4.4061,  4.3026,  4.4809,  4.3788,  4.2784,  4.4537,  4.3546,
+         4.5274,  4.4296,  4.6000,  4.7683,  4.9346,  4.8375,  5.0017,  5.1640,
+         5.0679,  4.9731,  4.8797,  4.7875,  4.9472,  4.8561,  5.0138,  4.9237,
+         4.8347,  4.9904,  4.9023,  5.0562,  5.2086,  5.1212,  5.0350,  4.9497,
+         4.8655,  5.0156,  4.9322,  4.8497,  4.7682,  4.6876,  4.8355,  4.9820,
+         5.1273,  5.0469,  5.1908,  5.3333,  5.4747,  5.6149,  5.7540,  5.6737,
+         5.5942,  5.5155,  5.6530,  5.5750,  5.7112,  5.6338,  5.5572,  5.4813,
+         5.4061,  5.3316,  5.2578,  5.3921,  5.5255,  5.6578,  5.7892,  5.7155,
+         5.8458,  5.9752,  5.9019,  5.8292,  5.9575,  5.8853,  5.8138,  5.9409,
+         5.8698,  5.9960,  6.1213,  6.0506,  5.9805,  6.1047,  6.2282,  6.1584,
+         6.2810,  6.4028,  6.5238,  6.4543,  6.5745,  6.6939,  6.6248,  6.5561,
+         6.4880,  6.6064,  6.5387,  6.4715,  6.4048,  6.5223,  6.4559,  6.3901,
+         6.5067,  6.6227,  6.5571,  6.4920,  6.4274,  6.5424,  6.4781,  6.4143,
+         6.3509,  6.4650,  6.4019,  6.3392,  6.4526,  6.3902,  6.3283,  6.2668,
+         6.3793,  6.3180,  6.2572,  6.1968,  6.1367,  6.2482,  6.3592,  6.4695,
+         6.4096,  6.3500,  6.4597,  6.5688,  6.6774,  6.6179,  6.7259,  6.6667,
+         6.7740,  6.8809,  6.9873,  6.9282]), 'prediction': True, 'confidence': 0.9999999999978689}
+Toxicity score (with watermark): {'attributeScores': {'TOXICITY': {'spanScores': [{'begin': 0, 'end': 848, 'score': {'value': 0.02107848, 'type': 'PROBABILITY'}}], 'summaryScore': {'value': 0.02107848, 'type': 'PROBABILITY'}}}, 'languages': ['en'], 'detectedLanguages': ['en']}
+################################################################################
+Toxicity score (without watermark): {'attributeScores': {'TOXICITY': {'spanScores': [{'begin': 0, 'end': 526, 'score': {'value': 0.031449065, 'type': 'PROBABILITY'}}], 'summaryScore': {'value': 0.031449065, 'type': 'PROBABILITY'}}}, 'languages': ['en'], 'detectedLanguages': ['en', 'ilo']}
+================================================================================
