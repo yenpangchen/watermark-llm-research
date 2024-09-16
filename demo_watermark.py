@@ -215,7 +215,7 @@ def load_model(args):
     )
 
     args.is_seq2seq_model = any([(model_type in args.model_name_or_path) for model_type in ["t5","T0"]])
-    args.is_decoder_only_model = any([(model_type in args.model_name_or_path) for model_type in ["gpt","opt","bloom","MediaTek","gemma","Llama"]])
+    args.is_decoder_only_model = any([(model_type in args.model_name_or_path) for model_type in ["gpt","opt","bloom","MediaTek","gemma","Llama","Taiwan"]])
     if args.is_seq2seq_model:
         model = AutoModelForSeq2SeqLM.from_pretrained(args.model_name_or_path)
     elif args.is_decoder_only_model:

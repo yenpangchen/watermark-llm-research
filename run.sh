@@ -2,5 +2,5 @@
 python demo_watermark.py --model_name_or_path "google/gemma-2b" --demo_public True --use_gpu True
 # python demo_watermark.py --model_name_or_path "MediaTek-Research/Breexe-8x7B-Instruct-v0_1" --demo_public True --use_gpu True
 # python demo_watermark.py --model_name_or_path "yentinglin/Llama-3-Taiwan-8B-Instruct" --demo_public True --use_gpu True
-
-
+# python demo_watermark.py --model_name_or_path "taide/Llama3-TAIDE-LX-8B-Chat-Alpha1" --demo_public True --use_gpu True
+# python demo_watermark.py --model_name_or_path "yentinglin/Taiwan-LLM-13B-v2.0-chat" --demo_public True --use_gpu True
